@@ -1,3 +1,12 @@
+"""
+appId 登録済みのappId
+statsDataId 取得するための統計表ID
+cdArea データ取得の地域ID
+lang 表示言語(Jなので、日本語を指定)
+取得方法: requestsライブラリを使用して、APIにGETリクエストを送信して、返ってきたデータをjson形式で表示して、28行目以降で見やすくする。
+"""
+
+
 import requests
 import pandas as pd
 import json
@@ -7,15 +16,8 @@ API_URL  = "https://api.e-stat.go.jp/rest/3.0/app/json/getStatsData"
 
 params = {
     "appId": APP_ID,
-    "statsDataId": "0003445078",
-    "cdArea": "08000",
-    "metaGetFlg":"Y",
-    "cntGetFlg":"N",
-    "explanationGetFlg":"Y",
-    "annotationGetFlg":"Y",
-    "sectionHeaderFlg":"1",
-    "replaceSpChars":"0",
-
+    "statsDataId": "0003445078", #令和2年度国勢調査
+    "cdArea": "08000", #茨城県
     "lang": "J",  # 日本語を指定
 }
 
