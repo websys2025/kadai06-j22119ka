@@ -1,9 +1,13 @@
 """
+取得したデータの種類 令和2年度国勢調査
+エンドポイント https://api.e-stat.go.jp/rest/3.0/app/json/getStatsData
+機能
 appId 登録済みのappId
 statsDataId 取得するための統計表ID
 cdArea データ取得の地域ID
 lang 表示言語(Jなので、日本語を指定)
-取得方法: requestsライブラリを使用して、APIにGETリクエストを送信して、返ってきたデータをjson形式で表示して、28行目以降で見やすくする。
+
+使い方: requestsライブラリを使用して、APIにGETリクエストを送信して、返ってきたデータをjson形式で表示して、pandasでdataframe化し、項目の表示名を置き換えて出力する。
 """
 
 
@@ -11,7 +15,7 @@ import requests
 import pandas as pd
 import json
 
-APP_ID = "def11e17b8acec0c71ca6174c79d116b7d72df17"
+APP_ID = "b7d399617d9a0d73d8d50351b12367e8cff69fd8"
 API_URL  = "https://api.e-stat.go.jp/rest/3.0/app/json/getStatsData"
 
 params = {
